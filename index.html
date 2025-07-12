@@ -3,17 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balasubramaniyaprabu - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Balasubramaniyaprabu - Backend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* =====================
+       ✨  Clean Color Palette
+       ===================== */
     :root {
-      --primary: #00c6ff;
-      --primary-dark: #0072ff;
-      --light: #f1f9ff;
+      --primary: #2563eb;       /* Primary blue */
+      --primary-dark: #1e40af;  /* Darker blue */
+      --accent: #e11d48;       /* Vibrant red */
+      --light: #f8fafc;        /* Light background */
+      --light-gray: #e2e8f0;   /* Border color */
       --white: #ffffff;
-      --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      --dark: #1e293b;         /* Dark text */
+      --gray: #64748b;         /* Secondary text */
+      
+      /* Spacing */
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
+      
+      /* Border radius */
+      --radius-sm: 4px;
+      --radius-md: 8px;
     }
 
+    /* =====================
+       Global reset & base
+       ===================== */
     * {
       margin: 0;
       padding: 0;
@@ -22,271 +42,476 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #e6f7ff, #ccf2ff);
-      color: #222;
+      background-color: var(--light);
+      color: var(--dark);
       line-height: 1.6;
-      position: relative;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-image: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 60%),
-                        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-      z-index: -1;
+    /* =====================
+       Typography
+       ===================== */
+    h1, h2, h3 {
+      font-weight: 600;
+      line-height: 1.3;
     }
 
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+
+    p {
+      color: var(--gray);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =====================
+       Header & navigation
+       ===================== */
     header {
-      background: linear-gradient(to right, var(--primary-dark), var(--primary));
-      color: var(--white);
-      padding: 20px;
+      background-color: var(--white);
+      padding: var(--space-md) var(--space-xl);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      align-items: center;
     }
 
     .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 1px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
     }
 
     nav {
-      margin-top: 10px;
+      display: flex;
+      gap: var(--space-lg);
     }
 
     nav a {
-      color: var(--white);
-      margin-left: 20px;
-      text-decoration: none;
+      color: var(--dark);
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.2s;
     }
 
     nav a:hover {
-      color: #e0ffff;
+      color: var(--primary);
     }
 
+    /* =====================
+       Hero section
+       ===================== */
     .hero {
       text-align: center;
-      padding: 80px 20px 50px;
+      padding: var(--space-xl) var(--space-md);
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: #0072ff;
+      color: var(--primary-dark);
+      margin-bottom: var(--space-sm);
     }
 
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: #444;
+      font-size: 1.1rem;
+      margin-bottom: var(--space-lg);
     }
 
-    .hero a {
-      color: #0072ff;
-      text-decoration: none;
-      font-weight: 500;
-      margin: 0 8px;
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
     }
 
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--light-gray);
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      background-color: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    /* =====================
+       Main content
+       ===================== */
     main {
-      max-width: 1100px;
-      margin: 20px auto;
-      padding: 0 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space-md) var(--space-xl);
     }
 
     section {
-      background: var(--white);
-      border-radius: 15px;
-      padding: 30px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: var(--space-xl);
     }
 
-    section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+    section h2 {
       color: var(--primary-dark);
-      border-left: 6px solid var(--primary);
-      padding-left: 12px;
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-sm);
+      border-bottom: 2px solid var(--light-gray);
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 20px;
+    /* Timeline for education */
+    .timeline {
+      position: relative;
+      padding-left: var(--space-lg);
     }
 
-    ul li::before {
-      content: "\2713";
-      color: var(--primary);
-      margin-right: 10px;
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 7px;
+      height: 100%;
+      width: 2px;
+      background-color: var(--light-gray);
     }
 
+    .timeline-item {
+      position: relative;
+      padding-bottom: var(--space-lg);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -1.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      border: 2px solid var(--white);
+    }
+
+    .timeline-date {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: var(--space-sm);
+    }
+
+    /* Projects */
     .project {
-      margin-top: 20px;
+      margin-bottom: var(--space-lg);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      background-color: var(--white);
+      border: 1px solid var(--light-gray);
     }
 
-    .project img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-      box-shadow: var(--shadow);
-    }
-
-    .highlight {
-      font-weight: 600;
+    .project h3 {
       color: var(--primary-dark);
+      margin-bottom: var(--space-sm);
     }
 
+    .project ul {
+      list-style-position: inside;
+      margin-bottom: var(--space-md);
+    }
+
+    .project li {
+      margin-bottom: var(--space-sm);
+      color: var(--gray);
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .tech-item {
+      background-color: var(--light);
+      color: var(--primary-dark);
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .skill-item {
+      background-color: var(--white);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--light-gray);
+      text-align: center;
+    }
+
+    .skill-icon {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: var(--space-sm);
+    }
+
+    /* =====================
+       Footer
+       ===================== */
     footer {
       text-align: center;
-      padding: 20px;
-      background: var(--primary-dark);
+      padding: var(--space-lg);
+      background-color: var(--primary-dark);
       color: var(--white);
     }
 
-    @media (max-width: 768px) {
-      nav {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-      }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-md);
+    }
 
-      nav a {
-        display: inline-block;
-        margin: 10px;
+    .footer-link {
+      color: var(--white);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* =====================
+       Responsive tweaks
+       ===================== */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+      
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .social-link {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Portfolio</div>
-    <nav>
-      <a href="#objective">Objective</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#languages">Languages</a>
-      <a href="#interests">Interests</a>
-    </nav>
+    <div class="header-container">
+      <div class="logo"></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <div class="hero">
     <h1>Balasubramaniyaprabu R</h1>
-    <p>Aspiring Backend Developer | Java Enthusiast | Problem Solver</p>
-    <p>
-      <a href="mailto:arivubala35@gmail.com">Email</a> | 
-      <a href="https://github.com/bala1868" target="_blank">GitHub</a> | 
-      <a href="https://leetcode.com/u/bala_2766/" target="_blank">LeetCode</a>
-    </p>
+    <p>Java | Spring Boot | SQL | HTML | CSS</p>
+    
+    <div class="social-links">
+      <a href="mailto:arivubala35@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i>
+        <span>Email</span>
+      </a>
+      <a href="https://github.com/bala1868" target="_blank" class="social-link">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="https://leetcode.com/u/bala_2766/" target="_blank" class="social-link">
+        <i class="fas fa-code"></i>
+        <span>LeetCode</span>
+      </a>
+    </div>
   </div>
 
   <main>
-    <section id="objective">
-      <h2>Objective</h2>
+    <section id="about">
+      <h2>About Me</h2>
       <p>
-        To leverage my strong problem-solving skills, backend development knowledge,
-        and academic background to contribute effectively to software projects and grow professionally.
+        I'm a Computer Science student passionate about backend development. I specialize in building robust systems with Java and Spring Boot, with strong problem-solving skills and a solid understanding of data structures and algorithms.
+      </p>
+      <p>
+        Currently pursuing my B.E. in Computer Science and Design, I'm looking for opportunities to apply my skills in a professional environment and grow as a backend developer.
       </p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
-      <ul>
-        <li><span class="highlight">B.E. Computer Science and Design</span> – Erode Sengunthar Engineering College (CGPA: 7.96)(2022-2026)</li>
-        <li>HSC – Govt. Boys Hr. Sec. School, Anthiyur (67.83%) (2020-2022)</li>
-        <li>SSLC – Govt. Boys Hr. Sec. School, Anthiyur (87.2%) (2018-2020)</li>
-      </ul>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2022 - 2026 (Expected)</div>
+          <h3>B.E. Computer Science and Design</h3>
+          <p>Erode Sengunthar Engineering College</p>
+          <p>CGPA: 7.96</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2020 - 2022</div>
+          <h3>Higher Secondary Education</h3>
+          <p>Govt. Boys Hr. Sec. School, Anthiyur</p>
+          <p>Percentage: 67.83%</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2018 - 2020</div>
+          <h3>Secondary School Education</h3>
+          <p>Govt. Boys Hr. Sec. School, Anthiyur</p>
+          <p>Percentage: 87.2%</p>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
       <h2>Technical Skills</h2>
-      <ul>
-        <li>Java (Proficient)</li>
-        <li>SQL </li>
-        <li>HTML & CSS</li>
-        <li>Spring Boot, REST APIs</li>
-        <li>Data Structures & Algorithms</li>
-        <li>Tools: IntelliJ IDEA, VS Code, MySQL Workbench</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-java"></i></div>
+          <div>Java</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <div>SQL</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fas fa-server"></i></div>
+          <div>Spring Boot</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <div>DSA</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fab fa-html5"></i></div>
+          <div>HTML/CSS</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+          <div>Git</div>
+        </div>
+      </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
+
       <div class="project">
-        <p class="highlight">Bus Reservation System (Console App)</p>
+        <h3>Bus Reservation System (Spring Boot Backend)</h3>
         <ul>
-          <li>Implemented user authentication, search & ticket booking</li>
-          <li>Admin panel for bus management</li>
-          <li><span class="highlight">Tech:</span> Java, MySQL (JDBC)</li>
+        Developed a robust backend system for managing bus reservations using the Spring Boot framework. The application follows
+        a layered architecture with RESTful APIs to handle user authentication, bus scheduling, and ticket booking operations.
         </ul>
-        <!-- <img src="https://v" alt="Bus Reservation Screenshot"> -->
+        <div class="tech-stack">
+          <span class="tech-item">Java</span>
+          <span class="tech-item">Spring Boot</span>
+          <span class="tech-item">MySQL</span>
+        </div>
       </div>
-      <div class="project">
-        <p class="highlight">Bus Reservation System using springBoot (Backend)</p>
+
+       <div class="project">
+        <h3> Course Registration System (Full Stack)</h3>
         <ul>
-          <li>Implemented user authentication, search & ticket booking</li>
-          <li>Admin panel for bus management</li>
-          <li><span class="highlight">Tech:</span> Java, MySQL (JDBC)</li>
+    A dynamic course registration system that allows students to register for available courses and view details in
+    real-time. The backend exposes RESTful APIs built with Spring Boot, and data is persisted using Spring Data JPA.
+    </ul>
+        <div class="tech-stack">
+          <span class="tech-item">Java</span>
+          <span class="tech-item">Spring Boot</span>
+          <span class="tech-item">MySQL</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Bus Reservation System (Console)</h3>
+        <ul>
+    This is a simple console-based Bus Reservation System developed using Java and MySQL. It allows users to register, log
+    in, view available buses, book tickets, and view booking history. Admins can add buses, view bookings, and manage the
+    bus database.
         </ul>
-        <!-- <img src="https://v" alt="Bus Reservation Screenshot"> -->
-      </div>
-      <div class="project">
-        <p class="highlight">Course Registration System (Full Stack)</p>
-        <ul>
-              <li> Built a RESTful backend system for a Bus Reservation Platform using Spring Boot</li>
-            <li>Implemented layered architecture (Controller-Service-Repository) to manage users, bookings, and bus schedules.</li>
-             <li><span class="highlight">Tech:</span> Java,springBoot,DataJpa,MySQL,Postman for testing</li>
-            </ul>
-        <!-- <img src="images\image.png" alt="Course Registration Screenshot"> -->
+        <div class="tech-stack">
+          <span class="tech-item">Java</span>
+          <span class="tech-item">JDBC</span>
+          <span class="tech-item">MySQL</span>
+        </div>
       </div>
     </section>
 
-    <section id="achievements">
-      <h2>Achievements & Certifications</h2>
-      <ul>
-        <li>150+ problems solved on LeetCode </li>
-        <li>Oracle Learning Explorer Badge – Oracle University</li>
-        <li>Java Foundation & DSA Certifications – Infosys</li>
-        <li>Cloud Computing – NPTEL</li>
-      </ul>
-    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out for opportunities or collaborations:</p>
+      <div class="social-links" style="justify-content: flex-start; margin-top: 1rem;">
+        <a href="mailto:arivubala35@gmail.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+          <span>arivubala35@gmail.com</span>
+        </a>
+      </div>
+        <div class="social-links" style="justify-content: flex-start; margin-top: 1rem;">
+              <a>
+              <i class="fas fa-phone"></i>
+             <span>    +91 9342682766</span>
+        </a>
+      </div>
 
-    <section id="languages">
-      <h2>Languages Known</h2>
-      <ul>
-        <li>Tamil – Native</li>
-        <li>English – Proficient</li>
-      </ul>
-    </section>
-
-    <section id="interests">
-      <h2>Areas of Interest</h2>
-      <ul>
-        <li>Backend Development</li>
-        <li>Database Management</li>
-       
-      </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025-Balasubramaniyarabu. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about" class="footer-link">About</a>
+      <a href="#skills" class="footer-link">Skills</a>
+      <a href="#projects" class="footer-link">Projects</a>
+      <a href="#contact" class="footer-link">Contact</a>
+    </div>
+    <p class="copyright">&copy; 2025 Balasubramaniyaprabu R</p>
   </footer>
 </body>
 </html>
