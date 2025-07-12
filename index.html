@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balasubramaniyaprabu - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00c6ff;
+      --primary-dark: #0072ff;
+      --light: #f1f9ff;
+      --white: #ffffff;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #e6f7ff, #ccf2ff);
+      color: #222;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 60%),
+                        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+      z-index: -1;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary-dark), var(--primary));
+      color: var(--white);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: var(--white);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e0ffff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #0072ff;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .hero a {
+      color: #0072ff;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 8px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+      border-left: 6px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+
+    ul li::before {
+      content: "\2713";
+      color: var(--primary);
+      margin-right: 10px;
+    }
+
+    .project {
+      margin-top: 20px;
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--primary-dark);
+      color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Portfolio</div>
+    <nav>
+      <a href="#objective">Objective</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#languages">Languages</a>
+      <a href="#interests">Interests</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Balasubramaniyaprabu R</h1>
+    <p>Aspiring Backend Developer | Java Enthusiast | Problem Solver</p>
+    <p>
+      <a href="mailto:arivubala35@gmail.com">Email</a> | 
+      <a href="https://github.com/bala1868" target="_blank">GitHub</a> | 
+      <a href="https://leetcode.com/u/bala_2766/" target="_blank">LeetCode</a>
+    </p>
+  </div>
+
+  <main>
+    <section id="objective">
+      <h2>Objective</h2>
+      <p>
+        To leverage my strong problem-solving skills, backend development knowledge,
+        and academic background to contribute effectively to software projects and grow professionally.
+      </p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><span class="highlight">B.E. Computer Science and Design</span> – Erode Sengunthar Engineering College (CGPA: 7.96)(2022-2026)</li>
+        <li>HSC – Govt. Boys Hr. Sec. School, Anthiyur (67.83%) (2020-2022)</li>
+        <li>SSLC – Govt. Boys Hr. Sec. School, Anthiyur (87.2%) (2018-2020)</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>Java (Proficient)</li>
+        <li>SQL </li>
+        <li>HTML & CSS</li>
+        <li>Spring Boot, REST APIs</li>
+        <li>Data Structures & Algorithms</li>
+        <li>Tools: IntelliJ IDEA, VS Code, MySQL Workbench</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <p class="highlight">Bus Reservation System (Console App)</p>
+        <ul>
+          <li>Implemented user authentication, search & ticket booking</li>
+          <li>Admin panel for bus management</li>
+          <li><span class="highlight">Tech:</span> Java, MySQL (JDBC)</li>
+        </ul>
+        <!-- <img src="https://v" alt="Bus Reservation Screenshot"> -->
+      </div>
+      <div class="project">
+        <p class="highlight">Bus Reservation System using springBoot (Backend)</p>
+        <ul>
+          <li>Implemented user authentication, search & ticket booking</li>
+          <li>Admin panel for bus management</li>
+          <li><span class="highlight">Tech:</span> Java, MySQL (JDBC)</li>
+        </ul>
+        <!-- <img src="https://v" alt="Bus Reservation Screenshot"> -->
+      </div>
+      <div class="project">
+        <p class="highlight">Course Registration System (Full Stack)</p>
+        <ul>
+              <li> Built a RESTful backend system for a Bus Reservation Platform using Spring Boot</li>
+            <li>Implemented layered architecture (Controller-Service-Repository) to manage users, bookings, and bus schedules.</li>
+             <li><span class="highlight">Tech:</span> Java,springBoot,DataJpa,MySQL,Postman for testing</li>
+            </ul>
+        <!-- <img src="images\image.png" alt="Course Registration Screenshot"> -->
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements & Certifications</h2>
+      <ul>
+        <li>150+ problems solved on LeetCode </li>
+        <li>Oracle Learning Explorer Badge – Oracle University</li>
+        <li>Java Foundation & DSA Certifications – Infosys</li>
+        <li>Cloud Computing – NPTEL</li>
+      </ul>
+    </section>
+
+    <section id="languages">
+      <h2>Languages Known</h2>
+      <ul>
+        <li>Tamil – Native</li>
+        <li>English – Proficient</li>
+      </ul>
+    </section>
+
+    <section id="interests">
+      <h2>Areas of Interest</h2>
+      <ul>
+        <li>Backend Development</li>
+        <li>Database Management</li>
+       
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025-Balasubramaniyarabu. All rights reserved.</p>
+  </footer>
+</body>
+</html>
